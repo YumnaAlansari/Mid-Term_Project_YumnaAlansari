@@ -4,6 +4,7 @@ import SDAIronHack.ArtHouse.Model.Cinema;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
+import java.util.List;
 import java.util.Optional;
 
 @Repository
@@ -11,4 +12,9 @@ public interface CinemaRepository extends JpaRepository<Cinema, Long> {
 
     Optional<Cinema> findById(Long id); // This id
 
+    List<Cinema> findByDirector(String director);
+
+    List<Cinema> findByReleaseYear(int releaseYear);
+
+   List<Cinema> findByCategory(String category);
 }
