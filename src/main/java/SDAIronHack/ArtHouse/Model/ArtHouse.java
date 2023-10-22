@@ -1,28 +1,20 @@
 package SDAIronHack.ArtHouse.Model;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
-import jakarta.persistence.Inheritance;
-import jakarta.persistence.InheritanceType;
+import jakarta.persistence.*;
+import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 @Entity
 @Data
+@AllArgsConstructor
+@NoArgsConstructor
 @Inheritance(strategy = InheritanceType.JOINED)
 public class ArtHouse {
 
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private String name;
-    private String description;
     private double duration;
-    // private double rating;
-    public ArtHouse() {}
-
-    public ArtHouse(Long id, String name, String description, double duration) {
-        this.id = id;
-        this.name = name;
-        this.description = description;
-        this.duration = duration;
-    }
 }

@@ -1,32 +1,23 @@
 package SDAIronHack.ArtHouse.Model;
 
 import jakarta.persistence.*;
+import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 @Entity
 @Data
-public class Music extends ArtHouse {
+@NoArgsConstructor
+@AllArgsConstructor
+public class Music extends ArtHouse{
 
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    // "rock", "pop", "jazz"
     private String genre;
     private String artist;
+    @Column(name = "release_year")
     private int releaseYear;
-    private boolean isFavorite;
-    @ManyToOne
-    @JoinColumn(name = "artHouse_id")
-    private ArtHouse artHouse;
-
-    public Music(){}
-    public Music(Long id, String genre, String artist, int releaseYear, boolean isFavorite, ArtHouse artHouse) {
-        this.id = id;
-        this.genre = genre;
-        this.artist = artist;
-        this.releaseYear = releaseYear;
-        this.isFavorite = isFavorite;
-        this.artHouse = artHouse;
-    }
 
 
 }

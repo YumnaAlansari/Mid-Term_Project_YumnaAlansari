@@ -1,34 +1,26 @@
 package SDAIronHack.ArtHouse.Model;
 
 import jakarta.persistence.*;
+import lombok.AllArgsConstructor;
 import lombok.Data;
-
-import java.util.List;
+import lombok.NoArgsConstructor;
 
 @Entity
 @Data
+@NoArgsConstructor
+@AllArgsConstructor
 public class Cinema extends ArtHouse {
 
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private String director;
+    @Column(name = "number_of_actors")
     private int numberOfActors;
+    @Column(name = "release_year")
     private int releaseYear;
     private String category;
-    private String productionCompany;
-    @ManyToOne
-    @JoinColumn(name = "artHouse_id")
-    private ArtHouse artHouse;
 
-    public Cinema(){}
 
-    public Cinema(Long id, String director, int numberOfActors, int releaseYear, String category, String productionCompany, ArtHouse artHouse) {
-        this.id = id;
-        this.director = director;
-        this.numberOfActors = numberOfActors;
-        this.releaseYear = releaseYear;
-        this.category = category;
-        this.productionCompany = productionCompany;
-        this.artHouse = artHouse;
-    }
+
 }
