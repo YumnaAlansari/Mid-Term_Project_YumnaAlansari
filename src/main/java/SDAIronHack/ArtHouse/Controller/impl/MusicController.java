@@ -19,13 +19,13 @@ public class MusicController {
 
     @GetMapping("/Music")
     @ResponseStatus(HttpStatus.OK)
-    public List<Music> getAllCinema(){
+    public List<Music> getAllMusic(){
         return musicService.getAllMusic();
     }
 
     @GetMapping("/Music/getById/{id}")
     @ResponseStatus (HttpStatus.OK)
-    public Optional<Music> getCinemaById(@PathVariable Long id){
+    public Optional<Music> getMusicById(@PathVariable Long id){
         return musicService.getMusicById(id);
     }
 

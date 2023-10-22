@@ -1,11 +1,7 @@
 package SDAIronHack.ArtHouse.Service.interfaces;
 
-import SDAIronHack.ArtHouse.Model.Cinema;
 import SDAIronHack.ArtHouse.Model.Music;
-import jakarta.persistence.Column;
-
 import java.util.List;
-import java.util.MissingFormatArgumentException;
 import java.util.Optional;
 
 public interface IMusicService {

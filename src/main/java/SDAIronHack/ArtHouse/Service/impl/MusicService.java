@@ -5,9 +5,7 @@ import SDAIronHack.ArtHouse.Model.Music;
 import SDAIronHack.ArtHouse.Repository.MusicRepository;
 import SDAIronHack.ArtHouse.Service.interfaces.IMusicService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.expression.spel.ast.OpMultiply;
 import org.springframework.stereotype.Service;
-
 import java.util.List;
 import java.util.Optional;
 
