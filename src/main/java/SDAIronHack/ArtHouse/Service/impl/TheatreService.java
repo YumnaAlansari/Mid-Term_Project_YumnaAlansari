@@ -17,34 +17,30 @@ public class TheatreService implements ITheatreService {
 
     @Override
     public List<Theatre> getAllTheatre() {
-        return null;
+        return theatreRepository.findAll();
     }
 
     @Override
     public Optional<Theatre> getTheatreById(Long id) {
-        return Optional.empty();
+        return theatreRepository.findById(id);
     }
 
     @Override
     public List<Theatre> getTheatreByPlayWright(String playWright) {
-        return null;
+        return theatreRepository.getTheatreByPlayWright(playWright);
     }
 
     @Override
     public List<Theatre> getTheatreByNumberOfActors(int numberOfActors) {
-        return null;
+        return theatreRepository.getTheatreByNumberOfActors(numberOfActors);
     }
 
     @Override
-    public Optional<Theatre> getTheatreByCategory(String category) {
-        return Optional.empty();
+    public List<Theatre> getTheatreByCategory(String category) {
+        return theatreRepository.getTheatreByCategory(category);
     }
 
     @Override
     public void changeTheatreCategory(String category, String category1) {}
 
-    @Override
-    public void deleteById(Long id) {
-
-    }
 }

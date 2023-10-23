@@ -64,7 +64,7 @@ public class CinemaController {
     @DeleteMapping("/Cinema/deleteById/{id}")
     @ResponseStatus(HttpStatus.ACCEPTED)
     public void deleteCinemaById(@PathVariable Long id) {
-       cinemaService.deleteById(id);
+       cinemaRepository.deleteById(id);
     }
 
 }

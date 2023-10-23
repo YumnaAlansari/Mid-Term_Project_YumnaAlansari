@@ -12,5 +12,4 @@ public interface ICinemaService {
     public List<Cinema> getCinemaByDirector(String director);
     public List<Cinema> getCinemaByReleaseYear( int releaseYear);
     public List<Cinema> getCinemaByCategory(String category);
-    void deleteById(Long id);
 }

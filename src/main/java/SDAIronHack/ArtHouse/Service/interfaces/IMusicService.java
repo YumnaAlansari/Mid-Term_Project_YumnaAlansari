@@ -13,5 +13,4 @@ public interface IMusicService {
     public List<Music> getMusicByReleaseYear( int releaseYear);
     void updateMusicById(Music music, Long id);
 
-    void deleteById(Long id);
 }

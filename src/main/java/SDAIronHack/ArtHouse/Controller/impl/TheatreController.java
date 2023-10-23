@@ -26,7 +26,6 @@ public class TheatreController {
     @GetMapping("/Theatre")
     @ResponseStatus(HttpStatus.OK)
     public List<Theatre> getAllTheatre(){
-
         return theatreService.getAllTheatre();
     }
 
@@ -48,7 +47,7 @@ public class TheatreController {
     }
     @GetMapping("/Theatre/getByCategory/category")
     @ResponseStatus (HttpStatus.OK)
-    public Optional<Theatre> getTheatreByCategory(String category){
+    public List<Theatre> getTheatreByCategory(@RequestParam String category){
         return theatreService.getTheatreByCategory(category);
     }
 
@@ -71,6 +70,6 @@ public class TheatreController {
     @DeleteMapping("/Theatre/deleteById/{id}")
     @ResponseStatus(HttpStatus.ACCEPTED)
     public void deleteTheatreById(@PathVariable Long id) {
-        theatreService.deleteById(id);
+       theatreRepository.deleteById(id);
     }
 }

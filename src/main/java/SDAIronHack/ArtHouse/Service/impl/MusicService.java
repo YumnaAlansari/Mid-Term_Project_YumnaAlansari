@@ -41,11 +41,11 @@ public class MusicService implements IMusicService {
     }
 
     @Override
-    public void updateMusicById(Music music, Long id) {}
-
-    @Override
-    public void deleteById(Long id) {
-
+    public void updateMusicById(Music music, Long id) {
+        music.setId(id);
+        musicRepository.save(music);
     }
+
+
 
 }

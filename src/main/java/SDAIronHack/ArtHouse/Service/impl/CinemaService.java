@@ -37,6 +37,4 @@ public class CinemaService implements ICinemaService {
         return cinemaRepository.findByCategory(category);
     }
 
-    @Override
-    public void deleteById(Long id) {}
 }

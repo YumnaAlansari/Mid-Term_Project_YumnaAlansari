@@ -71,7 +71,7 @@ public class MusicController {
     @DeleteMapping("/Music/deleteById/{id}")
     @ResponseStatus(HttpStatus.ACCEPTED)
     public void deleteMusicById(@PathVariable Long id) {
-       musicService.deleteById(id);
+       musicRepository.deleteById(id);
     }
 
 
