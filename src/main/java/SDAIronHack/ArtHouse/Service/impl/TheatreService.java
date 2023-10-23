@@ -14,6 +14,7 @@ public class TheatreService implements ITheatreService {
 
     @Autowired
     TheatreRepository theatreRepository;
+
     @Override
     public List<Theatre> getAllTheatre() {
         return null;
@@ -37,5 +38,13 @@ public class TheatreService implements ITheatreService {
     @Override
     public Optional<Theatre> getTheatreByCategory(String category) {
         return Optional.empty();
+    }
+
+    @Override
+    public void changeTheatreCategory(String category, String category1) {}
+
+    @Override
+    public void deleteById(Long id) {
+
     }
 }

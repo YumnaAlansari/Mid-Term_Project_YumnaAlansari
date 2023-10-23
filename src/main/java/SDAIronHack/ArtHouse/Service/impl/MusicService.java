@@ -39,4 +39,13 @@ public class MusicService implements IMusicService {
     public List<Music> getMusicByReleaseYear(int releaseYear) {
         return musicRepository.findMusicByReleaseYear(releaseYear);
     }
+
+    @Override
+    public void updateMusicById(Music music, Long id) {}
+
+    @Override
+    public void deleteById(Long id) {
+
+    }
+
 }

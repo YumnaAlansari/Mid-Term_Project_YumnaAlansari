@@ -11,4 +11,7 @@ public interface IMusicService {
     public List<Music> getMusicByGenre(String genre);
     public Optional<Music> getMusicByArtist(String artist);
     public List<Music> getMusicByReleaseYear( int releaseYear);
+    void updateMusicById(Music music, Long id);
+
+    void deleteById(Long id);
 }

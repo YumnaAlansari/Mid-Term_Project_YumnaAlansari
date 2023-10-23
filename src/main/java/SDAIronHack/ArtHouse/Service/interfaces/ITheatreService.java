@@ -11,4 +11,6 @@ public interface ITheatreService {
     public List<Theatre> getTheatreByPlayWright(String playWright);
     public List<Theatre> getTheatreByNumberOfActors( int numberOfActors);
     public Optional<Theatre> getTheatreByCategory(String category);
+    public void changeTheatreCategory(String category, String category1);
+    public void deleteById(Long id);
 }

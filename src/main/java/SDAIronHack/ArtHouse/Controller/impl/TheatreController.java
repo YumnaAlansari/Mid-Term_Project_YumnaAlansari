@@ -1,7 +1,7 @@
 package SDAIronHack.ArtHouse.Controller.impl;
 
 
-import SDAIronHack.ArtHouse.Model.Music;
+import SDAIronHack.ArtHouse.Controller.dto.TheatreCategoryDTO;
 import SDAIronHack.ArtHouse.Model.Theatre;
 import SDAIronHack.ArtHouse.Repository.TheatreRepository;
 import SDAIronHack.ArtHouse.Service.impl.TheatreService;
@@ -26,6 +26,7 @@ public class TheatreController {
     @GetMapping("/Theatre")
     @ResponseStatus(HttpStatus.OK)
     public List<Theatre> getAllTheatre(){
+
         return theatreService.getAllTheatre();
     }
 
@@ -59,7 +60,17 @@ public class TheatreController {
     }
 
 
+    // Patch Request
+    @PatchMapping("/Theatre/changeCategory/category")
+    @ResponseStatus (HttpStatus.ACCEPTED)
+    public void changeTheatreCategory(@RequestBody TheatreCategoryDTO theatreCategoryDTO, @RequestParam String category){
+        theatreService.changeTheatreCategory(theatreCategoryDTO.getCategory(),category );
+    }
 
-    
-    // Delete Requests
+    // Delete Request
+    @DeleteMapping("/Theatre/deleteById/{id}")
+    @ResponseStatus(HttpStatus.ACCEPTED)
+    public void deleteTheatreById(@PathVariable Long id) {
+        theatreService.deleteById(id);
+    }
 }

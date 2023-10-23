@@ -25,6 +25,7 @@ public class CinemaController {
     @GetMapping("/Cinema")
     @ResponseStatus (HttpStatus.OK)
     public List<Cinema> getAllCinema(){
+
         return cinemaService.getAllCinema();
     }
 
@@ -34,9 +35,9 @@ public class CinemaController {
         return cinemaService.getCinemaById(id);
     }
 
-    @GetMapping("/Cinema/getByDirector/director")
+    @GetMapping("/Cinema/getByDirector/{director}")
     @ResponseStatus (HttpStatus.OK)
-    public List<Cinema> getCinemaByDirector(@RequestParam String director){
+    public List<Cinema> getCinemaByDirector(@PathVariable String director){
         return cinemaService.getCinemaByDirector(director);
     }
     @GetMapping("/Cinema/getByReleaseYear/{releaseYear}")
@@ -59,5 +60,11 @@ public class CinemaController {
     }
 
 
-    // PUT/PATCH Requests
+    // Delete Request
+    @DeleteMapping("/Cinema/deleteById/{id}")
+    @ResponseStatus(HttpStatus.ACCEPTED)
+    public void deleteCinemaById(@PathVariable Long id) {
+       cinemaService.deleteById(id);
+    }
+
 }
