@@ -14,4 +14,5 @@ public interface CinemaRepository extends JpaRepository<Cinema, Long> {
     List<Cinema> findByReleaseYear(int releaseYear);
 
     List<Cinema> findByCategory(String category);
+
 }

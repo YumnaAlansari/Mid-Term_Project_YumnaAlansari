@@ -22,5 +22,4 @@ public class Cinema extends ArtHouse {
     private String category;
 
 
-
 }
