@@ -3,6 +3,7 @@ package SDAIronHack.ArtHouse.Controller.impl;
 
 import SDAIronHack.ArtHouse.Model.Music;
 import SDAIronHack.ArtHouse.Model.Theatre;
+import SDAIronHack.ArtHouse.Repository.TheatreRepository;
 import SDAIronHack.ArtHouse.Service.impl.TheatreService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -17,7 +18,11 @@ public class TheatreController {
 
     @Autowired
     TheatreService theatreService;
+    @Autowired // For Post Request
+    TheatreRepository theatreRepository;
 
+
+    // Get Requests
     @GetMapping("/Theatre")
     @ResponseStatus(HttpStatus.OK)
     public List<Theatre> getAllTheatre(){
@@ -46,4 +51,15 @@ public class TheatreController {
         return theatreService.getTheatreByCategory(category);
     }
 
+    // Post Request
+    @PostMapping("/Theatre/addTheatre")
+    @ResponseStatus (HttpStatus.CREATED)
+    public Theatre addTheatre(@RequestBody Theatre theatre){
+        return theatreRepository.save(theatre);
+    }
+
+
+
+    
+    // Delete Requests
 }

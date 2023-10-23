@@ -2,6 +2,8 @@ package SDAIronHack.ArtHouse.Controller.impl;
 
 
 import SDAIronHack.ArtHouse.Model.Music;
+import SDAIronHack.ArtHouse.Model.Theatre;
+import SDAIronHack.ArtHouse.Repository.MusicRepository;
 import SDAIronHack.ArtHouse.Service.impl.MusicService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -16,7 +18,10 @@ public class MusicController {
 
     @Autowired
     MusicService musicService;
+    @Autowired
+    MusicRepository musicRepository;
 
+    // Get Requests
     @GetMapping("/Music")
     @ResponseStatus(HttpStatus.OK)
     public List<Music> getAllMusic(){
@@ -46,5 +51,19 @@ public class MusicController {
     public List<Music> getMusicByReleaseYear( int releaseYear){
         return musicService.getMusicByReleaseYear(releaseYear);
     }
+
+    // Post Request
+    @PostMapping("/Music/addMusic")
+    @ResponseStatus (HttpStatus.CREATED)
+    public Music addMusic(@RequestBody Music music){
+        return musicRepository.save(music);
+    }
+
+
+
+
+
+    // Post Requests
+
 
 }

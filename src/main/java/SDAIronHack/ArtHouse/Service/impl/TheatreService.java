@@ -4,10 +4,12 @@ import SDAIronHack.ArtHouse.Model.Theatre;
 import SDAIronHack.ArtHouse.Repository.TheatreRepository;
 import SDAIronHack.ArtHouse.Service.interfaces.ITheatreService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 import java.util.Optional;
 
+@Service
 public class TheatreService implements ITheatreService {
 
     @Autowired
