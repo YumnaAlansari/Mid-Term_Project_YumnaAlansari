@@ -31,7 +31,7 @@ public class MusicService implements IMusicService {
     }
 
     @Override
-    public Optional<Music> getMusicByArtist(String artist) {
+    public List<Music> getMusicByArtist(String artist) {
         return musicRepository.findMusicByArtist(artist);
     }
 

@@ -11,6 +11,8 @@ import java.util.Optional;
 public interface MusicRepository extends JpaRepository<Music, Long> {
 
     List<Music> findMusicByGenre(String genre);
-    Optional<Music> findMusicByArtist(String artist);
+    List<Music> findMusicByArtist(String artist);
     List<Music> findMusicByReleaseYear(int releaseYear);
+
+
 }

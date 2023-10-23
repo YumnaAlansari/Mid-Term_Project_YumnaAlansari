@@ -35,28 +35,28 @@ class CinemaRepositoryTest {
         cinemaRepository.delete(cinema3);
     }
     @Test
-    void findByDirector_withValidDirectory() {
+    void findCinemaByDirector_withValidDirectory() {
         String director = "Frank Darabont";
         List<Cinema> cinemaList = cinemaRepository.findByDirector(director);
         assertFalse(cinemaList.isEmpty());
         assertEquals(2, cinemaList.size());
     }
     @Test
-    void findByDirector_withInValidDirectory() {
+    void findCinemaByDirector_withInValidDirectory() {
         String director = "Incorrect Director";
         List<Cinema> cinemaList = cinemaRepository.findByDirector(director);
         assertTrue(cinemaList.isEmpty());
         assertEquals(0, cinemaList.size());
     }
     @Test
-    void findByDirector_withNullDirector() {
+    void findCinemaByDirector_withNullDirector() {
         String director = null;
         List<Cinema> cinemaList = cinemaRepository.findByDirector(director);
         assertTrue(cinemaList.isEmpty());
         assertEquals(0, cinemaList.size());
     }
     @Test
-    void findByReleaseYear_withValidReleaseYear() {
+    void findCinemaByReleaseYear_withValidReleaseYear() {
         int releaseYear = 1972;
         List<Cinema> cinemaList = cinemaRepository.findByReleaseYear(releaseYear);
         assertFalse(cinemaList.isEmpty());
@@ -64,14 +64,14 @@ class CinemaRepositoryTest {
 
     }
     @Test
-    void findByReleaseYear_withInValidReleaseYear() {
+    void findCinemaByReleaseYear_withInValidReleaseYear() {
         int releaseYear = 2030;
         List<Cinema> cinemaList = cinemaRepository.findByReleaseYear(releaseYear);
         assertTrue(cinemaList.isEmpty());
         assertEquals(0, cinemaList.size());
     }
     @Test
-    void findByCategory_withValidCategory() {
+    void findCinemaByCategory_withValidCategory() {
         String category = "Drama";
         List<Cinema> cinemaList = cinemaRepository.findByCategory(category);
         assertFalse(cinemaList.isEmpty());
@@ -79,14 +79,14 @@ class CinemaRepositoryTest {
     }
 
     @Test
-    void findByCategory_withInValidCategory() {
+    void findCinemaByCategory_withInValidCategory() {
         String category = "Horror";
         List<Cinema> cinemaList = cinemaRepository.findByCategory(category);
         assertTrue(cinemaList.isEmpty());
         assertEquals(0, cinemaList.size());
     }
     @Test
-    void findByCategory_withNullCategory() {
+    void findCinemaByCategory_withNullCategory() {
         String category = null;
         List<Cinema> cinemaList = cinemaRepository.findByCategory(category);
         assertTrue(cinemaList.isEmpty());

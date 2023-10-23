@@ -43,7 +43,7 @@ public class MusicController {
 
     @GetMapping("/Music/getByArtist/artist")
     @ResponseStatus (HttpStatus.OK)
-    public Optional<Music> getMusicByArtist(@RequestParam String artist){
+    public List<Music> getMusicByArtist(@RequestParam String artist){
         return musicService.getMusicByArtist(artist);
     }
 
