@@ -15,7 +15,6 @@ import org.springframework.test.web.servlet.result.MockMvcResultMatchers;
 import org.springframework.test.web.servlet.setup.MockMvcBuilders;
 import org.springframework.web.context.WebApplicationContext;
 
-import java.util.Optional;
 
 import static org.junit.jupiter.api.Assertions.*;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
@@ -55,14 +54,11 @@ class TheatreControllerTest {
     }
 
     @Test
-    void getAllTheatre_inValidRequest_allTheatre() throws Exception {
+    void getAllTheatre_inValidRequest_notFound() throws Exception {
 
-        MvcResult mvcResult = mockMvc.perform(get("/api/Theatre"))
-                .andExpect(status().isOk())
-                .andExpect(MockMvcResultMatchers.content().contentType(MediaType.APPLICATION_JSON))
+        MvcResult mvcResult = mockMvc.perform(get("/api/Theatre/"))
+                .andExpect(status().isNotFound())
                 .andReturn();
-
-        assertFalse(mvcResult.getResponse().getContentAsString().contains("Nobody"));
     }
 
     @Test
@@ -84,17 +80,53 @@ class TheatreControllerTest {
     }
 
     @Test
-    void getTheatreByPlayWright() {
+    void getTheatreByCategory_validCategory_correctTheatre() throws Exception {
+        MvcResult mvcResult = mockMvc.perform(get("/api/Theatre/getByCategory/category?category=Comedy"))
+                .andExpect(status().isOk())
+                .andExpect(MockMvcResultMatchers.content().contentType(MediaType.APPLICATION_JSON))
+                .andReturn();
+
+        assertTrue(mvcResult.getResponse().getContentAsString().contains("William Shakespeare"));
+    }
+    @Test
+    void getTheatreByCategory_inValidCategory_notFound() throws Exception {
+        MvcResult mvcResult = mockMvc.perform(get("/api/Theatre/getByCategory/category?category=Horror"))
+                .andExpect(status().isNotFound())
+                .andReturn();
+
     }
 
     @Test
-    void getTheatreByNumberOfActors() {
-    }
+    void getTheatreByPlayWright_validPlayWright_correctTheatre() throws Exception {
+        MvcResult mvcResult = mockMvc.perform(get("/api/Theatre/getByPlayWright/playWright?playWright=William Shakespeare"))
+                .andExpect(status().isOk())
+                .andExpect(MockMvcResultMatchers.content().contentType(MediaType.APPLICATION_JSON))
+                .andReturn();
 
+        assertTrue(mvcResult.getResponse().getContentAsString().contains("Tragedy"));
+    }
     @Test
-    void getTheatreByCategory() {
-    }
+    void getTheatreByPlayWright_inValidPlayWright_notFound() throws Exception {
+        MvcResult mvcResult = mockMvc.perform(get("/api/Theatre/getByPlayWright/playWright?playWright=nobody"))
+                .andExpect(status().isNotFound())
+                .andReturn();
 
+    }
+    @Test
+    void getTheatreByNumberOfActors_validNumberOfActors_correctTheatre() throws Exception  {
+        MvcResult mvcResult = mockMvc.perform(get("/api/Theatre/getByNumberOfActors/10"))
+                .andExpect(status().isOk())
+                .andExpect(MockMvcResultMatchers.content().contentType(MediaType.APPLICATION_JSON))
+                .andReturn();
+
+        assertTrue(mvcResult.getResponse().getContentAsString().contains("Comedy"));
+    }
+    @Test
+    void getTheatreByNumberOfActors_inValidNumberOfActors_correctTheatre() throws Exception  {
+        MvcResult mvcResult = mockMvc.perform(get("/api/Theatre/getByNumberOfActors/19"))
+                .andExpect(status().isNotFound())
+                .andReturn();
+    }
     @Test
     void addTheatre() {
     }
