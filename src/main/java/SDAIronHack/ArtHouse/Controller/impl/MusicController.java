@@ -1,6 +1,7 @@
 package SDAIronHack.ArtHouse.Controller.impl;
 
 
+import SDAIronHack.ArtHouse.Controller.interfaces.IMusicController;
 import SDAIronHack.ArtHouse.Model.Music;
 import SDAIronHack.ArtHouse.Model.Theatre;
 import SDAIronHack.ArtHouse.Repository.MusicRepository;
@@ -15,7 +16,7 @@ import java.util.Optional;
 
 @RestController
 @RequestMapping("/api")
-public class MusicController {
+public class MusicController implements IMusicController {
 
     @Autowired
     MusicService musicService;

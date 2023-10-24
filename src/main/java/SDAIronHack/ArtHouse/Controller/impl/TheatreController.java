@@ -2,6 +2,7 @@ package SDAIronHack.ArtHouse.Controller.impl;
 
 
 import SDAIronHack.ArtHouse.Controller.dto.TheatreCategoryDTO;
+import SDAIronHack.ArtHouse.Controller.interfaces.ITheatreController;
 import SDAIronHack.ArtHouse.Model.Theatre;
 import SDAIronHack.ArtHouse.Repository.TheatreRepository;
 import SDAIronHack.ArtHouse.Service.impl.TheatreService;
@@ -14,11 +15,11 @@ import java.util.Optional;
 
 @RestController
 @RequestMapping("/api")
-public class TheatreController {
+public class TheatreController implements ITheatreController {
 
     @Autowired
     TheatreService theatreService;
-    @Autowired // For Post Request
+    @Autowired
     TheatreRepository theatreRepository;
 
 
@@ -60,9 +61,9 @@ public class TheatreController {
 
 
     // Patch Request
-    @PatchMapping("/Theatre/changeCategory/category")
+    @PatchMapping("/Theatre/changeCategory/{id}")
     @ResponseStatus (HttpStatus.ACCEPTED)
-    public void changeTheatreCategory(@RequestBody TheatreCategoryDTO theatreCategoryDTO, @RequestParam Long id){
+    public void changeTheatreCategory(@RequestBody TheatreCategoryDTO theatreCategoryDTO, @PathVariable Long id){
         theatreService.changeTheatreCategory(theatreCategoryDTO.getCategory(),id );
     }
 
