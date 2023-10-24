@@ -28,28 +28,38 @@ public class MusicService implements IMusicService {
 
     @Override
     public Optional<Music> getMusicById(Long id) {
-        return musicRepository.findById(id);
+        Optional<Music> musicOptional = musicRepository.findById(id);
+        if (musicOptional.isEmpty())throw new ResponseStatusException(HttpStatus.NOT_FOUND, "The id " + id + " not found");
+        return musicOptional;
     }
 
     @Override
     public List<Music> getMusicByGenre(String genre) {
-        return musicRepository.findMusicByGenre(genre);
+        List<Music> musicList = musicRepository.findMusicByGenre(genre);
+        if (musicList.isEmpty()) throw new ResponseStatusException(HttpStatus.NOT_FOUND, "The genre " + genre + " not found");
+        return musicList;
     }
 
     @Override
     public List<Music> getMusicByArtist(String artist) {
-        return musicRepository.findMusicByArtist(artist);
+        List<Music> musicList = musicRepository.findMusicByArtist(artist);
+        if (musicList.isEmpty()) throw new ResponseStatusException(HttpStatus.NOT_FOUND, "The artist " + artist + " not found");
+        return musicList;
     }
 
     @Override
     public List<Music> getMusicByReleaseYear(int releaseYear) {
-        return musicRepository.findMusicByReleaseYear(releaseYear);
+        List<Music> musicList = musicRepository.findMusicByReleaseYear(releaseYear);
+        if (musicList.isEmpty()) throw new ResponseStatusException(HttpStatus.NOT_FOUND, "The releaseYear " + releaseYear + " not found");
+        return musicList;
     }
 
     @Override
     public void updateMusicById(Music music, Long id) {
-        music.setId(id);
-        musicRepository.save(music);
+            Optional<Music> musicOptional = musicRepository.findById(id);
+            if (musicOptional.isEmpty()) throw new ResponseStatusException(HttpStatus.NOT_FOUND, "The id " + id + " not found");
+            music.setId(id);
+            musicRepository.save(music);
     }
 
 
