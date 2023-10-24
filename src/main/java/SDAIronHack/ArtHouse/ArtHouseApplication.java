@@ -16,10 +16,6 @@ public class ArtHouseApplication { //implements CommandLineRunner
 
 		SpringApplication.run(ArtHouseApplication.class, args);
 	}
-
-
-
-
 	public void run(String... args) throws Exception {
 
         boolean exit = false;

@@ -16,6 +16,7 @@ import java.util.Optional;
 @RequestMapping("/api")
 public class TheatreController implements ITheatreController {
 
+
     @Autowired
     TheatreService theatreService;
 
