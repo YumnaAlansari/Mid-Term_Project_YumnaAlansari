@@ -62,7 +62,19 @@ public class MusicService implements IMusicService {
             musicRepository.save(music);
     }
 
+    @Override
+    public void save(Music music) {
+        musicRepository.save(music);
 
-    // Post (Save) + delete
+    }
+
+    @Override
+    public void deleteById(Long id) {
+        Optional<Music> musicOptional = musicRepository.findById(id);
+        if (musicOptional.isEmpty()) throw new ResponseStatusException(HttpStatus.NOT_FOUND, "The id " + id + " not found");
+        musicRepository.deleteById(id);
+
+    }
+
 
 }

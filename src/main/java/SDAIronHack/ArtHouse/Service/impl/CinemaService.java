@@ -49,5 +49,18 @@ public class CinemaService implements ICinemaService {
         return cinemaList;
     }
 
-    // Save + delete
+    @Override
+    public void addCinema(Cinema cinema) {
+        cinemaRepository.save(cinema);
+
+    }
+
+    @Override
+    public void deleteById(Long id) {
+        Optional<Cinema> cinemaOptional = cinemaRepository.findById(id);
+        if (cinemaOptional.isEmpty()) throw new ResponseStatusException(HttpStatus.NOT_FOUND, "The id " + id + " not found");
+        cinemaRepository.deleteById(id);
+
+    }
+
 }

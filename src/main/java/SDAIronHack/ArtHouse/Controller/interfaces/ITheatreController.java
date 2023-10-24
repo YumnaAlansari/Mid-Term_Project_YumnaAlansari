@@ -16,7 +16,7 @@ public interface ITheatreController {
     public List<Theatre> getTheatreByPlayWright(String playWright);
     public List<Theatre> getTheatreByNumberOfActors(int numberOfActors);
     public List<Theatre> getTheatreByCategory(String category);
-    public Theatre addTheatre(Theatre theatre);
+    public void addTheatre(Theatre theatre);
     public void changeTheatreCategory(TheatreCategoryDTO theatreCategoryDTO, Long id);
     public void deleteTheatreById(Long id);
 

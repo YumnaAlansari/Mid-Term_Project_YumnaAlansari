@@ -14,7 +14,7 @@ public interface ICinemaController {
     public List<Cinema> getCinemaByDirector(String director);
     public List<Cinema> getCinemaByReleaseYear( int releaseYear);
     public List<Cinema> getCinemaByCategory(String category);
-    public Cinema addCinema( Cinema cinema);
+    public void addCinema( Cinema cinema);
     public void deleteCinemaById(Long id);
 
 

@@ -3,8 +3,6 @@ package SDAIronHack.ArtHouse.Controller.impl;
 
 import SDAIronHack.ArtHouse.Controller.interfaces.IMusicController;
 import SDAIronHack.ArtHouse.Model.Music;
-import SDAIronHack.ArtHouse.Model.Theatre;
-import SDAIronHack.ArtHouse.Repository.MusicRepository;
 import SDAIronHack.ArtHouse.Service.impl.MusicService;
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -20,8 +18,6 @@ public class MusicController implements IMusicController {
 
     @Autowired
     MusicService musicService;
-    @Autowired
-    MusicRepository musicRepository;
 
     // Get Requests
     @GetMapping("/Music")
@@ -57,8 +53,8 @@ public class MusicController implements IMusicController {
     // Post Request
     @PostMapping("/Music/addMusic")
     @ResponseStatus (HttpStatus.CREATED)
-    public Music addMusic(@RequestBody Music music){
-        return musicRepository.save(music);
+    public void addMusic(@RequestBody Music music){
+        musicService.save(music);
     }
 
     // PUT Requests
@@ -72,7 +68,7 @@ public class MusicController implements IMusicController {
     @DeleteMapping("/Music/deleteById/{id}")
     @ResponseStatus(HttpStatus.ACCEPTED)
     public void deleteMusicById(@PathVariable Long id) {
-       musicRepository.deleteById(id);
+        musicService.deleteById(id);
     }
 
 

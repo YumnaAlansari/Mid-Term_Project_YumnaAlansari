@@ -55,18 +55,25 @@ public class TheatreService implements ITheatreService {
     }
 
     @Override
-    public void changeTheatreCategory(String category, String category1) {
-
-    }
-
-
-
     public void changeTheatreCategory(String category, Long id) {
        Optional<Theatre> theatreOptional = theatreRepository.findById(id);
        if (theatreOptional.isEmpty()) throw new ResponseStatusException(HttpStatus.NOT_FOUND, "The id " + id + " not found");
        Theatre theatre = theatreOptional.get();
        theatre.setCategory(category);
        theatreRepository.save(theatre);
+    }
+
+    @Override
+    public void addTheatre(Theatre theatre) {
+        theatreRepository.save(theatre);
+    }
+
+    @Override
+    public void deleteTheatreById(Long id) {
+        Optional<Theatre> theatreOptional = theatreRepository.findById(id);
+        if (theatreOptional.isEmpty()) throw new ResponseStatusException(HttpStatus.NOT_FOUND, "The id " + id + " not found");
+        theatreRepository.deleteById(id);
+
     }
 
 

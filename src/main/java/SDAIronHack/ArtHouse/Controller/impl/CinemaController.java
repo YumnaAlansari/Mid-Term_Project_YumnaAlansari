@@ -3,8 +3,6 @@ package SDAIronHack.ArtHouse.Controller.impl;
 
 import SDAIronHack.ArtHouse.Controller.interfaces.ICinemaController;
 import SDAIronHack.ArtHouse.Model.Cinema;
-import SDAIronHack.ArtHouse.Model.Music;
-import SDAIronHack.ArtHouse.Repository.CinemaRepository;
 import SDAIronHack.ArtHouse.Service.interfaces.ICinemaService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -19,8 +17,6 @@ public class CinemaController implements ICinemaController {
 
     @Autowired
     ICinemaService cinemaService;
-    @Autowired
-    CinemaRepository cinemaRepository;
 
     // Get Requests
     @GetMapping("/Cinema")
@@ -55,8 +51,8 @@ public class CinemaController implements ICinemaController {
     // Post Request
     @PostMapping("/Cinema/addCinema")
     @ResponseStatus (HttpStatus.CREATED)
-    public Cinema addCinema(@RequestBody Cinema cinema){
-        return cinemaRepository.save(cinema);
+    public void addCinema(@RequestBody Cinema cinema){
+        cinemaService.addCinema(cinema);
     }
 
 
@@ -64,7 +60,7 @@ public class CinemaController implements ICinemaController {
     @DeleteMapping("/Cinema/deleteById/{id}")
     @ResponseStatus(HttpStatus.ACCEPTED)
     public void deleteCinemaById(@PathVariable Long id) {
-       cinemaRepository.deleteById(id);
+       cinemaService.deleteById(id);
     }
 
 }

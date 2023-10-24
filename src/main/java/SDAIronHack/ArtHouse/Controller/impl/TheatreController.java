@@ -4,7 +4,6 @@ package SDAIronHack.ArtHouse.Controller.impl;
 import SDAIronHack.ArtHouse.Controller.dto.TheatreCategoryDTO;
 import SDAIronHack.ArtHouse.Controller.interfaces.ITheatreController;
 import SDAIronHack.ArtHouse.Model.Theatre;
-import SDAIronHack.ArtHouse.Repository.TheatreRepository;
 import SDAIronHack.ArtHouse.Service.impl.TheatreService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -19,8 +18,6 @@ public class TheatreController implements ITheatreController {
 
     @Autowired
     TheatreService theatreService;
-    @Autowired
-    TheatreRepository theatreRepository;
 
 
     // Get Requests
@@ -55,8 +52,8 @@ public class TheatreController implements ITheatreController {
     // Post Request
     @PostMapping("/Theatre/addTheatre")
     @ResponseStatus (HttpStatus.CREATED)
-    public Theatre addTheatre(@RequestBody Theatre theatre){
-        return theatreRepository.save(theatre);
+    public void addTheatre(@RequestBody Theatre theatre){
+        theatreService.addTheatre(theatre);
     }
 
 
@@ -71,6 +68,6 @@ public class TheatreController implements ITheatreController {
     @DeleteMapping("/Theatre/deleteById/{id}")
     @ResponseStatus(HttpStatus.ACCEPTED)
     public void deleteTheatreById(@PathVariable Long id) {
-       theatreRepository.deleteById(id);
+       theatreService.deleteTheatreById(id);
     }
 }
