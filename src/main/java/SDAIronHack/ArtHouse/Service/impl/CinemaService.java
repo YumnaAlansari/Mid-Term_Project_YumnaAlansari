@@ -4,7 +4,9 @@ import SDAIronHack.ArtHouse.Model.Cinema;
 import SDAIronHack.ArtHouse.Repository.CinemaRepository;
 import SDAIronHack.ArtHouse.Service.interfaces.ICinemaService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
+import org.springframework.web.server.ResponseStatusException;
 
 import java.util.List;
 import java.util.Optional;
@@ -17,24 +19,34 @@ public class CinemaService implements ICinemaService {
     CinemaRepository cinemaRepository;
 
     public List<Cinema> getAllCinema(){
-        return cinemaRepository.findAll();
+        List<Cinema> cinemaList =  cinemaRepository.findAll();
+        if (cinemaList.isEmpty()) throw new ResponseStatusException(HttpStatus.NOT_FOUND, "The cinema list not found");
+        return cinemaList;
     }
     public Optional<Cinema> getCinemaById(Long id){
-        return cinemaRepository.findById(id);
+        Optional<Cinema> cinemaOptional = cinemaRepository.findById(id);
+        if (cinemaOptional.isEmpty())throw new ResponseStatusException(HttpStatus.NOT_FOUND, "The id " + id + " not found");
+        return cinemaOptional;
     }
     @Override
     public List<Cinema> getCinemaByDirector(String director) {
-        return cinemaRepository.findByDirector(director);
+        List<Cinema> cinemaList = cinemaRepository.findByDirector(director);
+        if (cinemaList.isEmpty()) throw new ResponseStatusException(HttpStatus.NOT_FOUND, "The director " + director + " not found");
+        return cinemaList;
     }
 
     @Override
     public List<Cinema> getCinemaByReleaseYear(int releaseYear) {
-        return cinemaRepository.findByReleaseYear(releaseYear);
+        List<Cinema> cinemaList = cinemaRepository.findByReleaseYear(releaseYear);
+        if (cinemaList.isEmpty()) throw new ResponseStatusException(HttpStatus.NOT_FOUND, "The release year " + releaseYear + " not found");
+        return cinemaList;
     }
 
     @Override
     public List<Cinema> getCinemaByCategory(String category) {
-        return cinemaRepository.findByCategory(category);
+        List<Cinema> cinemaList = cinemaRepository.findByCategory(category);
+        if (cinemaList.isEmpty()) throw new ResponseStatusException(HttpStatus.NOT_FOUND, "The category " + category + " not found");
+        return cinemaList;
     }
 
 }
