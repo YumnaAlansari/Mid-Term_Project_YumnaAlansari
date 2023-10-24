@@ -30,23 +30,24 @@ public class CinemaService implements ICinemaService {
     }
     @Override
     public List<Cinema> getCinemaByDirector(String director) {
-        List<Cinema> cinemaList = cinemaRepository.findByDirector(director);
+        List<Cinema> cinemaList = cinemaRepository.findCinemaByDirector(director);
         if (cinemaList.isEmpty()) throw new ResponseStatusException(HttpStatus.NOT_FOUND, "The director " + director + " not found");
         return cinemaList;
     }
 
     @Override
     public List<Cinema> getCinemaByReleaseYear(int releaseYear) {
-        List<Cinema> cinemaList = cinemaRepository.findByReleaseYear(releaseYear);
+        List<Cinema> cinemaList = cinemaRepository.findCinemaByReleaseYear(releaseYear);
         if (cinemaList.isEmpty()) throw new ResponseStatusException(HttpStatus.NOT_FOUND, "The release year " + releaseYear + " not found");
         return cinemaList;
     }
 
     @Override
     public List<Cinema> getCinemaByCategory(String category) {
-        List<Cinema> cinemaList = cinemaRepository.findByCategory(category);
+        List<Cinema> cinemaList = cinemaRepository.findCinemaByCategory(category);
         if (cinemaList.isEmpty()) throw new ResponseStatusException(HttpStatus.NOT_FOUND, "The category " + category + " not found");
         return cinemaList;
     }
 
+    // Save + delete
 }

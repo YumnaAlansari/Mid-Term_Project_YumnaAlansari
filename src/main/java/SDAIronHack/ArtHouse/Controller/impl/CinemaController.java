@@ -25,7 +25,6 @@ public class CinemaController {
     @GetMapping("/Cinema")
     @ResponseStatus (HttpStatus.OK)
     public List<Cinema> getAllCinema(){
-
         return cinemaService.getAllCinema();
     }
 

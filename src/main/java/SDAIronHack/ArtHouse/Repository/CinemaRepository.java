@@ -9,10 +9,10 @@ import java.util.List;
 @Repository
 public interface CinemaRepository extends JpaRepository<Cinema, Long> {
 
-    List<Cinema> findByDirector(String director);
+    List<Cinema> findCinemaByDirector(String director);
 
-    List<Cinema> findByReleaseYear(int releaseYear);
+    List<Cinema> findCinemaByReleaseYear(int releaseYear);
 
-    List<Cinema> findByCategory(String category);
+    List<Cinema> findCinemaByCategory(String category);
 
 }

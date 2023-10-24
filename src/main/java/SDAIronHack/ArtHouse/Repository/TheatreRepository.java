@@ -9,9 +9,9 @@ import java.util.List;
 
 @Repository
 public interface TheatreRepository extends JpaRepository<Theatre, Long> {
-    List<Theatre> getTheatreByPlayWright(String playWright);
-    List<Theatre> getTheatreByNumberOfActors(int numberOfActors);
-    List<Theatre> getTheatreByCategory(String category);
+    List<Theatre> findTheatreByPlayWright(String playWright);
+    List<Theatre> findTheatreByNumberOfActors(int numberOfActors);
+    List<Theatre> findTheatreByCategory(String category);
 
 
 }

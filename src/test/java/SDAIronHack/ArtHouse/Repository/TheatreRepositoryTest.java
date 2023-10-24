@@ -36,30 +36,30 @@ class TheatreRepositoryTest {
     }
     @Test
     void getTheatreByPlayWright_withValidPlayWright() {
-        String PlayWright = "William Shakespeare";
-        List<Theatre> theatreList =theatreRepository.getTheatreByPlayWright(PlayWright);
+        String playWright = "William Shakespeare";
+        List<Theatre> theatreList =theatreRepository.findTheatreByPlayWright(playWright);
         assertFalse(theatreList.isEmpty());
         assertEquals(6, theatreList.size());
     }
 
     @Test
     void getTheatreByPlayWright_withInValidPlayWright() {
-        String PlayWright = "Nothing";
-        List<Theatre> theatreList =theatreRepository.getTheatreByPlayWright(PlayWright);
+        String playWright = "Nothing";
+        List<Theatre> theatreList =theatreRepository.findTheatreByPlayWright(playWright);
         assertTrue(theatreList.isEmpty());
         assertEquals(0, theatreList.size());
     }
     @Test
     void getTheatreByPlayWright_withNullPlayWright() {
-        String PlayWright = null;
-        List<Theatre> theatreList =theatreRepository.getTheatreByPlayWright(PlayWright);
+        String playWright = null;
+        List<Theatre> theatreList =theatreRepository.findTheatreByPlayWright(playWright);
         assertTrue(theatreList.isEmpty());
         assertEquals(0, theatreList.size());
     }
     @Test
     void getTheatreByNumberOfActors_withValidNumberOfActors() {
         int numberOfActors = 10;
-        List<Theatre> theatreList = theatreRepository.getTheatreByNumberOfActors(numberOfActors);
+        List<Theatre> theatreList = theatreRepository.findTheatreByNumberOfActors(numberOfActors);
         assertFalse(theatreList.isEmpty());
         assertEquals(3, theatreList.size());
 
@@ -67,21 +67,21 @@ class TheatreRepositoryTest {
     @Test
     void getTheatreByNumberOfActors_withInValidNumberOfActors() {
         int numberOfActors = 0;
-        List<Theatre> theatreList = theatreRepository.getTheatreByNumberOfActors(numberOfActors);
+        List<Theatre> theatreList = theatreRepository.findTheatreByNumberOfActors(numberOfActors);
         assertTrue(theatreList.isEmpty());
         assertEquals(0, theatreList.size());
     }
     @Test
     void getTheatreByCategory_withValidCategory() {
         String category = "Tragedy";
-        List<Theatre> theatreList = theatreRepository.getTheatreByCategory(category);
+        List<Theatre> theatreList = theatreRepository.findTheatreByCategory(category);
         assertFalse(theatreList.isEmpty());
         assertEquals(5, theatreList.size());
     }
     @Test
     void getTheatreByCategory_withInValidCategory() {
         String category = "Nothing";
-        List<Theatre> theatreList =theatreRepository.getTheatreByCategory(category);
+        List<Theatre> theatreList =theatreRepository.findTheatreByCategory(category);
         assertTrue(theatreList.isEmpty());
         assertEquals(0, theatreList.size());
     }
@@ -89,7 +89,7 @@ class TheatreRepositoryTest {
     @Test
     void getTheatreByCategory_withNullCategory() {
         String category = null;
-        List<Theatre> theatreList =theatreRepository.getTheatreByCategory(category);
+        List<Theatre> theatreList =theatreRepository.findTheatreByCategory(category);
         assertTrue(theatreList.isEmpty());
         assertEquals(0, theatreList.size());
     }

@@ -1,8 +1,5 @@
 package SDAIronHack.ArtHouse.Controller.dto;
 
-import lombok.Getter;
-
-@Getter
 public class TheatreCategoryDTO {
     private String category;
 
@@ -13,4 +10,7 @@ public class TheatreCategoryDTO {
         this.category = category;
     }
 
+    public String getCategory() {
+        return category;
+    }
 }

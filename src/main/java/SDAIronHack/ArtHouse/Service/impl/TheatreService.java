@@ -1,10 +1,14 @@
 package SDAIronHack.ArtHouse.Service.impl;
 
+import SDAIronHack.ArtHouse.Model.Cinema;
+import SDAIronHack.ArtHouse.Model.Music;
 import SDAIronHack.ArtHouse.Model.Theatre;
 import SDAIronHack.ArtHouse.Repository.TheatreRepository;
 import SDAIronHack.ArtHouse.Service.interfaces.ITheatreService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
+import org.springframework.web.server.ResponseStatusException;
 
 import java.util.List;
 import java.util.Optional;
@@ -17,30 +21,45 @@ public class TheatreService implements ITheatreService {
 
     @Override
     public List<Theatre> getAllTheatre() {
-        return theatreRepository.findAll();
+        List<Theatre> theatreList =  theatreRepository.findAll();
+        if (theatreList.isEmpty()) throw new ResponseStatusException(HttpStatus.NOT_FOUND, "The theatre list not found");
+        return theatreList;
     }
 
     @Override
     public Optional<Theatre> getTheatreById(Long id) {
-        return theatreRepository.findById(id);
+        Optional<Theatre> theatreOptional =  theatreRepository.findById(id);
+        if (theatreOptional.isEmpty()) throw new ResponseStatusException(HttpStatus.NOT_FOUND,  "The id " + id + " not found");
+        return theatreOptional;
     }
 
     @Override
     public List<Theatre> getTheatreByPlayWright(String playWright) {
-        return theatreRepository.getTheatreByPlayWright(playWright);
+        List<Theatre> theatreList =  theatreRepository.findTheatreByPlayWright(playWright);
+        if (theatreList.isEmpty()) throw new ResponseStatusException(HttpStatus.NOT_FOUND,"The play wright " + playWright + " not found");
+        return theatreList;
     }
 
     @Override
     public List<Theatre> getTheatreByNumberOfActors(int numberOfActors) {
-        return theatreRepository.getTheatreByNumberOfActors(numberOfActors);
+        List<Theatre> theatreList =  theatreRepository.findTheatreByNumberOfActors(numberOfActors);
+        if (theatreList.isEmpty()) throw new ResponseStatusException(HttpStatus.NOT_FOUND,"The number of actors " + numberOfActors + " not found");
+        return theatreList;
     }
 
     @Override
     public List<Theatre> getTheatreByCategory(String category) {
-        return theatreRepository.getTheatreByCategory(category);
+        List<Theatre> theatreList =  theatreRepository.findTheatreByCategory(category);
+        if (theatreList.isEmpty()) throw new ResponseStatusException(HttpStatus.NOT_FOUND,"The category " + category + " not found");
+        return theatreList;
     }
 
     @Override
-    public void changeTheatreCategory(String category, String category1) {}
+    public void changeTheatreCategory(String category, String category1) {
+      //  Optional<Theatre> theatreOptional = theatreRepository.findById(id);
+     //   if (theatreOptional.isEmpty()) throw new ResponseStatusException(HttpStatus.NOT_FOUND, "The id " + id + " not found");
+
+    }
+
 
 }

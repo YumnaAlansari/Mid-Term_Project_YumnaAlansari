@@ -62,8 +62,8 @@ public class TheatreController {
     // Patch Request
     @PatchMapping("/Theatre/changeCategory/category")
     @ResponseStatus (HttpStatus.ACCEPTED)
-    public void changeTheatreCategory(@RequestBody TheatreCategoryDTO theatreCategoryDTO, @RequestParam String category){
-        theatreService.changeTheatreCategory(theatreCategoryDTO.getCategory(),category );
+    public void changeTheatreCategory(@RequestBody TheatreCategoryDTO theatreCategoryDTO, @RequestParam Long id){
+        theatreService.changeTheatreCategory(theatreCategoryDTO.getCategory(),id );
     }
 
     // Delete Request
