@@ -12,4 +12,6 @@ public interface TheatreRepository extends JpaRepository<Theatre, Long> {
     List<Theatre> getTheatreByPlayWright(String playWright);
     List<Theatre> getTheatreByNumberOfActors(int numberOfActors);
     List<Theatre> getTheatreByCategory(String category);
+
+
 }
