@@ -19,7 +19,6 @@ public class MusicController implements IMusicController {
     @Autowired
     MusicService musicService;
 
-    // Get Requests
     @GetMapping("/Music")
     @ResponseStatus(HttpStatus.OK)
     public List<Music> getAllMusic(){
@@ -50,21 +49,18 @@ public class MusicController implements IMusicController {
         return musicService.getMusicByReleaseYear(releaseYear);
     }
 
-    // Post Request
     @PostMapping("/Music/addMusic")
     @ResponseStatus (HttpStatus.CREATED)
     public void addMusic(@RequestBody Music music){
         musicService.save(music);
     }
 
-    // PUT Requests
     @PutMapping("/Music/updateById/{id}")
     @ResponseStatus(HttpStatus.ACCEPTED)
     public void updateMusicById(@RequestBody @Valid Music music, @PathVariable Long id) {
         musicService.updateMusicById(music, id);
     }
 
-    // Delete Request
     @DeleteMapping("/Music/deleteById/{id}")
     @ResponseStatus(HttpStatus.ACCEPTED)
     public void deleteMusicById(@PathVariable Long id) {

@@ -1,5 +1,6 @@
 package SDAIronHack.ArtHouse.Controller.impl;
 
+import SDAIronHack.ArtHouse.Model.Cinema;
 import SDAIronHack.ArtHouse.Repository.CinemaRepository;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.junit.jupiter.api.AfterEach;
@@ -15,7 +16,8 @@ import org.springframework.test.web.servlet.setup.MockMvcBuilders;
 import org.springframework.web.context.WebApplicationContext;
 
 import static org.junit.jupiter.api.Assertions.*;
-import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
+import static org.mockito.Mockito.doNothing;
+import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.*;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
 @SpringBootTest
@@ -26,15 +28,24 @@ class CinemaControllerTest {
     WebApplicationContext webApplicationContext;
     MockMvc mockMvc;
     ObjectMapper objectMapper = new ObjectMapper();
+    Cinema cinema;
 
     @BeforeEach
     public void setUp() {
         mockMvc = MockMvcBuilders.webAppContextSetup(webApplicationContext).build();
+        cinema = new Cinema ( 16L,"lllkkkjjj", 10, 1994, "Drama");
+        cinemaRepository.save(cinema);
     }
+    /*
     @AfterEach
     public void tearDown() {
-        cinemaRepository.deleteById(9L);
+
+        Long id = cinemaRepository.findCinemaByDirector("lllkkkjjj").get(0).getId();
+        cinemaRepository.deleteById(id);
     }
+
+     */
+
     @Test
     void getAllCinema_validRequest_allCinema() throws Exception {
 
@@ -54,7 +65,9 @@ class CinemaControllerTest {
     }
     @Test
     void getCinemaById_validId_correctCinema() throws Exception {
-        MvcResult mvcResult = mockMvc.perform(get("/api/Cinema/getById/1"))
+
+        Long id = cinemaRepository.findCinemaByDirector("lllkkkjjj").get(0).getId();
+        MvcResult mvcResult = mockMvc.perform(get("/api/Cinema/getById/"+id))
                 .andExpect(status().isOk())
                 .andExpect(MockMvcResultMatchers.content().contentType(MediaType.APPLICATION_JSON))
                 .andReturn();
@@ -116,15 +129,26 @@ class CinemaControllerTest {
                 .andReturn();
 
     }
-    // ===============================================================
-
-
-
     @Test
-    void addCinema() {
+    void saveCinema_validBody_CinemaSaved() throws Exception {
+        String body = objectMapper.writeValueAsString(cinema);
+
+        mockMvc.perform(post("/api/Cinema/addCinema").content(body).contentType(MediaType.APPLICATION_JSON))
+                .andExpect(status().isCreated())
+                .andReturn();
+
+        assertTrue(cinemaRepository.findAll().toString().contains("lllkkkjjj"));
     }
 
     @Test
-    void deleteCinemaById() {
+    void deleteCinema_validRequest_cinemaDeleted() throws Exception {
+        Long id = cinemaRepository.findCinemaByDirector("lllkkkjjj").get(0).getId();
+
+        mockMvc.perform(delete("/api/Cinema/deleteById/"+id))
+                .andExpect(status().isAccepted())
+                .andReturn();
+
+        assertFalse(cinemaRepository.findAll().toString().contains("lllkkkjjj"));
     }
+
 }

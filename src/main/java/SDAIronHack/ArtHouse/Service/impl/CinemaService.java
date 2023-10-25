@@ -34,27 +34,23 @@ public class CinemaService implements ICinemaService {
         if (cinemaList.isEmpty()) throw new ResponseStatusException(HttpStatus.NOT_FOUND, "The director " + director + " not found");
         return cinemaList;
     }
-
     @Override
     public List<Cinema> getCinemaByReleaseYear(int releaseYear) {
         List<Cinema> cinemaList = cinemaRepository.findCinemaByReleaseYear(releaseYear);
         if (cinemaList.isEmpty()) throw new ResponseStatusException(HttpStatus.NOT_FOUND, "The release year " + releaseYear + " not found");
         return cinemaList;
     }
-
     @Override
     public List<Cinema> getCinemaByCategory(String category) {
         List<Cinema> cinemaList = cinemaRepository.findCinemaByCategory(category);
         if (cinemaList.isEmpty()) throw new ResponseStatusException(HttpStatus.NOT_FOUND, "The category " + category + " not found");
         return cinemaList;
     }
-
     @Override
     public void addCinema(Cinema cinema) {
         cinemaRepository.save(cinema);
 
     }
-
     @Override
     public void deleteById(Long id) {
         Optional<Cinema> cinemaOptional = cinemaRepository.findById(id);
@@ -62,5 +58,6 @@ public class CinemaService implements ICinemaService {
         cinemaRepository.deleteById(id);
 
     }
+
 
 }

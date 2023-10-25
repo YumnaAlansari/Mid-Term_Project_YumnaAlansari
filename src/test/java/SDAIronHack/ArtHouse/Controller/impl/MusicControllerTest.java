@@ -1,5 +1,6 @@
 package SDAIronHack.ArtHouse.Controller.impl;
 
+import SDAIronHack.ArtHouse.Model.Music;
 import SDAIronHack.ArtHouse.Repository.MusicRepository;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.junit.jupiter.api.AfterEach;
@@ -15,7 +16,7 @@ import org.springframework.test.web.servlet.setup.MockMvcBuilders;
 import org.springframework.web.context.WebApplicationContext;
 
 import static org.junit.jupiter.api.Assertions.*;
-import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
+import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.*;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
 
@@ -26,28 +27,25 @@ class MusicControllerTest {
     MusicRepository musicRepository;
     @Autowired
     WebApplicationContext webApplicationContext;
-
     MockMvc mockMvc;
-
     ObjectMapper objectMapper = new ObjectMapper();
-
+    Music music;
     @BeforeEach
     public void setUp() {
         mockMvc = MockMvcBuilders.webAppContextSetup(webApplicationContext).build();
-
-       /*
-        Music music1 = new Music ( 9L, "Pop", "Stellar Beats", 2020);
-        Optional<Music> musicOptional = musicRepository.findById(9L);
-        assertTrue(musicOptional.isPresent());
-
-        */
-
+        music = new Music ( 9L, "aabbccddeeff", "Stellar Beats", 2020);
+        musicRepository.save(music);
     }
 
+
+    /*
    @AfterEach
     public void tearDown() {
-        musicRepository.deleteById(9L);
+       Long id = musicRepository.findMusicByGenre("aabbccddeeff").get(0).getId();
+       musicRepository.deleteById(id);
     }
+     */
+
 
     @Test
     void getAllMusic_validRequest_allMusic() throws Exception {
@@ -126,16 +124,40 @@ class MusicControllerTest {
                 .andExpect(status().isNotFound())
                 .andReturn();
         }
-
-
     @Test
-    void addMusic() {
+    void saveMusic_validBody_MusicSaved() throws Exception {
+        String body = objectMapper.writeValueAsString(music);
+
+        mockMvc.perform(post("/api/Music/addMusic").content(body).contentType(MediaType.APPLICATION_JSON))
+                .andExpect(status().isCreated())
+                .andReturn();
+
+        assertTrue(musicRepository.findAll().toString().contains("Pop"));
     }
     @Test
-    void updateMusicById() {
+    void updateMusic_validBody_musicUpdated() throws Exception {
+        music.setArtist("Serene Harmony");
+        String body = objectMapper.writeValueAsString(music);
+
+        Long id = musicRepository.findMusicByGenre("aabbccddeeff").get(0).getId();
+        mockMvc.perform(put("/api/Music/updateById/"+ id).content(body).contentType(MediaType.APPLICATION_JSON))
+                .andExpect(status().isAccepted())
+                .andReturn();
+
+
+        assertTrue(musicRepository.findAll().toString().contains("Serene Harmony"));
+
     }
+
     @Test
-    void deleteMusicById() {
+    void deleteMusic_validRequest_musicDeleted() throws Exception {
+        Long id = musicRepository.findMusicByGenre("aabbccddeeff").get(0).getId();
+
+        mockMvc.perform(delete("/api/Music/deleteById/" + id))
+                .andExpect(status().isAccepted())
+                .andReturn();
+
+       assertFalse(musicRepository.findAll().toString().contains("aabbccddeeff"));
     }
 
 }
