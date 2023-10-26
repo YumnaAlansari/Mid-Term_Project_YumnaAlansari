@@ -127,7 +127,7 @@ class TheatreControllerTest {
         assertTrue(mvcResult.getResponse().getContentAsString().contains("Comedy"));
     }
     @Test
-    void getTheatreByNumberOfActors_inValidNumberOfActors_correctTheatre() throws Exception  {
+    void getTheatreByNumberOfActors_inValidNumberOfActors_notFound() throws Exception  {
         MvcResult mvcResult = mockMvc.perform(get("/api/Theatre/getByNumberOfActors/19"))
                 .andExpect(status().isNotFound())
                 .andReturn();

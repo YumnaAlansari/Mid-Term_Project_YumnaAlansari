@@ -1,6 +1,7 @@
 package SDAIronHack.ArtHouse.Service.impl;
 
 import SDAIronHack.ArtHouse.Model.Cinema;
+import SDAIronHack.ArtHouse.Model.Music;
 import SDAIronHack.ArtHouse.Repository.CinemaRepository;
 import SDAIronHack.ArtHouse.Service.interfaces.ICinemaService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -51,6 +52,14 @@ public class CinemaService implements ICinemaService {
         cinemaRepository.save(cinema);
 
     }
+    @Override
+    public void updateMusicById(Cinema cinema, Long id) {
+        Optional<Cinema> cinemaOptional =cinemaRepository.findById(id);
+        if (cinemaOptional.isEmpty()) throw new ResponseStatusException(HttpStatus.NOT_FOUND, "The id " + id + " not found");
+        cinema.setId(id);
+        cinemaRepository.save(cinema);
+    }
+
     @Override
     public void deleteById(Long id) {
         Optional<Cinema> cinemaOptional = cinemaRepository.findById(id);

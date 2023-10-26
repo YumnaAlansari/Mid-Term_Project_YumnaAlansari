@@ -1,6 +1,7 @@
 package SDAIronHack.ArtHouse.Controller.interfaces;
 
 import SDAIronHack.ArtHouse.Model.Cinema;
+import jakarta.validation.Valid;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 
@@ -15,6 +16,7 @@ public interface ICinemaController {
     public List<Cinema> getCinemaByReleaseYear( int releaseYear);
     public List<Cinema> getCinemaByCategory(String category);
     public void addCinema( Cinema cinema);
+    public void updateCinemaById( Cinema cinema, Long id);
     public void deleteCinemaById(Long id);
 
 

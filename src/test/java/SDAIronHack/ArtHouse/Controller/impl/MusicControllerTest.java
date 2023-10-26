@@ -119,7 +119,7 @@ class MusicControllerTest {
 
     }
     @Test
-    void getMusicByArtist_inValidArtist_correctMusic() throws Exception {
+    void getMusicByArtist_inValidArtist_notFound() throws Exception {
         MvcResult mvcResult = mockMvc.perform(get("/api/Music/getByArtist/artist?artist=nobody"))
                 .andExpect(status().isNotFound())
                 .andReturn();
@@ -134,6 +134,7 @@ class MusicControllerTest {
 
         assertTrue(musicRepository.findAll().toString().contains("Pop"));
     }
+
     @Test
     void updateMusic_validBody_musicUpdated() throws Exception {
         music.setArtist("Serene Harmony");

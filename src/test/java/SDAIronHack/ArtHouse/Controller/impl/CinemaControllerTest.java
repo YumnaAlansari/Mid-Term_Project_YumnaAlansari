@@ -139,6 +139,19 @@ class CinemaControllerTest {
 
         assertTrue(cinemaRepository.findAll().toString().contains("lllkkkjjj"));
     }
+    @Test
+    void updateCinemaById_validBody_cinemaUpdated() throws Exception {
+        cinema.setCategory("Drama");
+        String body = objectMapper.writeValueAsString(cinema);
+        Long id = cinemaRepository.findCinemaByDirector("lllkkkjjj").get(0).getId();
+
+        mockMvc.perform(put("/api/Cinema/updateById/"+ id).content(body).contentType(MediaType.APPLICATION_JSON))
+                .andExpect(status().isAccepted())
+                .andReturn();
+
+        assertTrue(cinemaRepository.findAll().toString().contains("Frank Darabont"));
+
+    }
 
     @Test
     void deleteCinema_validRequest_cinemaDeleted() throws Exception {
@@ -150,5 +163,6 @@ class CinemaControllerTest {
 
         assertFalse(cinemaRepository.findAll().toString().contains("lllkkkjjj"));
     }
+
 
 }
