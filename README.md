@@ -195,7 +195,18 @@ Have 8 eight methods:
 ## Interfaces 
 THere are three interfaces (Cinema, Music and Theatre) displays the signature of all the methods used in the services.
 
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 
+
+# How the Application Works
+After linking the program to the database and the server, the user can interact with the server to create specific requests such as get, put, patch, post or delete based on specific criteria, where the required data is fetched from the database directly.
+
+
+### The code is organized into four main classes:
+- The ArtHouse, Cinema, Music, and Theatre classes represent the core entities in the ArtHouse application's system. They contain attributes and methods to manage the system.
+- The Repository: Which contains the basic functions that search for data in the database.
+- The Controlller: Which manages matters between databases and the server, as it contains requests, endpoints, and calls to the functions that implement them.
+- The Service: It is directly related to the controller, as it contains the logic and conditions that are performed when the function is called within the controller.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
