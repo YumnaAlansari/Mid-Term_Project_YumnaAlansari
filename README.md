@@ -1,4 +1,4 @@
-# ArtHouse Management System 
+# ArtHouse application's System 
 <a name="readme-top"></a>
 
 <!-- TABLE OF CONTENTS -->
