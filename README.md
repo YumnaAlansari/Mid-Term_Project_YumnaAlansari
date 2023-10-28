@@ -87,7 +87,7 @@ The Theater class represents a child class. It includes:
 ## Controller 
 I have two basic packages under the controller, the first for implementation and the second for interfaces:
 
-## Cinema Controller
+### Cinema Controller
 I have five get requests under the cinema category:
 - The first displays all the data in the database
 - The second displays the data in the database based on the ID number
@@ -100,10 +100,10 @@ I also have:
 - Put Request for modification based on the ID number
 - Delete Request for deletion based on the ID number
 
-## Cinema Interfaces
+### Cinema Interfaces
 Displays the signature of all the methods used in the controller.
 
-## Music Controller
+### Music Controller
 I have five get requests under the cinema category:
 - The first displays all the data in the database
 - The second displays the data in the database based on the ID number
@@ -116,10 +116,10 @@ I also have:
 - Put Request for modification based on the ID number
 - Delete Request for deletion based on the ID number
 
-## Music Interfaces
+### Music Interfaces
 Displays the signature of all the methods used in the controller.
 
-## Theatre Controller
+### Theatre Controller
 I have five get requests under the cinema category:
 - The first displays all the data in the database
 - The second displays the data in the database based on the ID number
@@ -132,10 +132,10 @@ I also have:
 - Patch Request for modification the category based on the ID number
 - Delete Request for deletion based on the ID number
 
-## Theatre Interfaces
+### Theatre Interfaces
 Displays the signature of all the methods used in the controller.
 
-## Theatre DTO 
+### Theatre DTO 
 To deal with patch category request
 
 
