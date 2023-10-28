@@ -63,7 +63,7 @@ public class MusicService implements IMusicService {
     }
 
     @Override
-    public void save(Music music) {
+    public void addMusic(Music music) {
         musicRepository.save(music);
 
     }

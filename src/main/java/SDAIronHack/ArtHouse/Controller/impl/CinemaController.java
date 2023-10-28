@@ -20,7 +20,7 @@ public class CinemaController implements ICinemaController {
     @Autowired
     ICinemaService cinemaService;
 
-    // Get Requests
+
     @GetMapping("/Cinema")
     @ResponseStatus (HttpStatus.OK)
     public List<Cinema> getAllCinema(){

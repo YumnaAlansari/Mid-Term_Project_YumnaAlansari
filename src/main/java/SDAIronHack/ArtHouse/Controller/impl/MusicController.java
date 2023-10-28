@@ -52,7 +52,7 @@ public class MusicController implements IMusicController {
     @PostMapping("/Music/addMusic")
     @ResponseStatus (HttpStatus.CREATED)
     public void addMusic(@RequestBody Music music){
-        musicService.save(music);
+        musicService.addMusic(music);
     }
 
     @PutMapping("/Music/updateById/{id}")

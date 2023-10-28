@@ -36,7 +36,7 @@ class CinemaControllerTest {
         cinema = new Cinema ( 16L,"lllkkkjjj", 10, 1994, "Drama");
         cinemaRepository.save(cinema);
     }
-    /*
+
     @AfterEach
     public void tearDown() {
 
@@ -44,7 +44,7 @@ class CinemaControllerTest {
         cinemaRepository.deleteById(id);
     }
 
-     */
+
 
     @Test
     void getAllCinema_validRequest_allCinema() throws Exception {

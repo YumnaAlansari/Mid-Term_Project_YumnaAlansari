@@ -10,7 +10,6 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @AllArgsConstructor
 public class Cinema extends ArtHouse {
-
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
@@ -20,6 +19,4 @@ public class Cinema extends ArtHouse {
     @Column(name = "release_year")
     private int releaseYear;
     private String category;
-
-
 }
