@@ -47,3 +47,41 @@ The ArtHouse application's provides the following features:
 - Delete requeste: You can delete any field in any class based on the ID number.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+## Code_Structure
+
+## Classes
+In ArtHouse application's, four main classes play a crucial role: ArtHouse, Cinema, Music, and Theater.
+
+### ArtHouse Class
+The ArtHouse class represents a super class in my application. It has the following attributes:
+
+- id:A unique identifier 
+- name: name of the child
+- duration: Duration of the child
+### Cinema Class
+The Cinema class represents a child class. It includes:
+
+- id: An auto-incremented unique identifier
+- director: Name of the director
+- numberOfActors: Cinema's number of actors 
+- releaseYear: Cinema's releaseYear
+- category: category Cinema's
+
+### Music Class
+The Music class represents a child class. It includes:
+
+- id: An auto-incremented unique identifier
+- genre: Music's genre
+- artist: Music's artist
+- releaseYear: Music's release year
+
+### Theater Class
+The Theater class represents a child class. It includes:
+
+- id: An auto-incremented unique identifier
+- playWright: Theater's play wright
+- numberOfActors:  Theater's number of actors
+- category:  Theater's category
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
