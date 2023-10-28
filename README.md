@@ -105,34 +105,58 @@ Displays the signature of all the methods used in the controller.
 
 ## Music Controller
 I have five get requests under the cinema category:
-The first displays all the data in the database
-The second displays the data in the database based on the ID number
-The third displays the data in the database based on the genre
-The fourth displays the data in the database based on the artist 
-The fifth displays the data in the database based on the year of release
+- The first displays all the data in the database
+- The second displays the data in the database based on the ID number
+- The third displays the data in the database based on the genre
+- The fourth displays the data in the database based on the artist 
+- The fifth displays the data in the database based on the year of release
 
 I also have:
-Post Request to add
-Put Request for modification based on the ID number
-Delete Request for deletion based on the ID number
+- Post Request to add
+- Put Request for modification based on the ID number
+- Delete Request for deletion based on the ID number
 
 ## Music Interfaces
 Displays the signature of all the methods used in the controller.
 
 ## Theatre Controller
 I have five get requests under the cinema category:
-The first displays all the data in the database
-The second displays the data in the database based on the ID number
-The third displays the data in the database based on the play wright
-The fourth displays the data in the database based on the number of actors 
-The fifth displays the data in the database based on the category
+- The first displays all the data in the database
+- The second displays the data in the database based on the ID number
+- The third displays the data in the database based on the play wright
+- The fourth displays the data in the database based on the number of actors 
+- The fifth displays the data in the database based on the category
 
 I also have:
-Post Request to add
-Patch Request for modification the category based on the ID number
-Delete Request for deletion based on the ID number
+- Post Request to add
+- Patch Request for modification the category based on the ID number
+- Delete Request for deletion based on the ID number
 
 ## Theatre Interfaces
 Displays the signature of all the methods used in the controller.
 
+## Theatre DTO 
+To deal with patch category request
+
+
+## Repository
+I have 3 main repository
+
+### Cinema Repository
+Have three methods:
+- findCinemaByDirector 
+- findCinemaByReleaseYear
+- findCinemaByCategory
+
+### Music Repository
+Have three methods:
+- findMusicByGenre 
+- findMusicByArtist 
+- findMusicByReleaseYear
+
+### Theatre Repository
+Have three methods:
+- findTheatreByPlayWright 
+- findTheatreByNumberOfActors 
+- findTheatreByCategory
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
