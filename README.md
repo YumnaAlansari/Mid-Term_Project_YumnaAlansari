@@ -85,7 +85,7 @@ The Theater class represents a child class. It includes:
 - category:  Theater's category
 
 ## Controller 
-I have two basic packages under the controller, the first for implementation and the second for interfaces:
+There are two basic packages under the controller, the first for implementation and the second for interfaces:
 
 ### Cinema Controller
 I have five get requests under the cinema category:
@@ -140,7 +140,6 @@ To deal with patch category request
 
 
 ## Repository
-I have 3 main repository
 
 ### Cinema Repository
 Have three methods:
@@ -159,4 +158,6 @@ Have three methods:
 - findTheatreByPlayWright 
 - findTheatreByNumberOfActors 
 - findTheatreByCategory
+
+## 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
