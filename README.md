@@ -50,7 +50,7 @@ The ArtHouse application's provides the following features:
 
 ## Code_Structure
 
-## Classes
+## Model
 In ArtHouse application's, four main classes play a crucial role: ArtHouse, Cinema, Music, and Theater.
 
 ### ArtHouse Class
@@ -92,10 +92,47 @@ I have five get requests under the cinema category:
 The first displays all the data in the database
 The second displays the data in the database based on the ID number
 The third displays the data in the database based on the name of the director
-The fourth displays the data in the database based on the year of launch
+The fourth displays the data in the database based on the year of release
 The fifth displays the data in the database based on the category
 
+I also have:
+Post Request to add
+Put Request for modification based on the ID number
+Delete Request for deletion based on the ID number
+
 ## Cinema Interfaces
+Displays the signature of all the methods used in the controller.
+
+## Music Controller
+I have five get requests under the cinema category:
+The first displays all the data in the database
+The second displays the data in the database based on the ID number
+The third displays the data in the database based on the genre
+The fourth displays the data in the database based on the artist 
+The fifth displays the data in the database based on the year of release
+
+I also have:
+Post Request to add
+Put Request for modification based on the ID number
+Delete Request for deletion based on the ID number
+
+## Music Interfaces
+Displays the signature of all the methods used in the controller.
+
+## Theatre Controller
+I have five get requests under the cinema category:
+The first displays all the data in the database
+The second displays the data in the database based on the ID number
+The third displays the data in the database based on the play wright
+The fourth displays the data in the database based on the number of actors 
+The fifth displays the data in the database based on the category
+
+I also have:
+Post Request to add
+Patch Request for modification the category based on the ID number
+Delete Request for deletion based on the ID number
+
+## Theatre Interfaces
 Displays the signature of all the methods used in the controller.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
