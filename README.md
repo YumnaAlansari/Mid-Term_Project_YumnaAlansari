@@ -209,3 +209,6 @@ After linking the program to the database and the server, the user can interact 
 - The Service: It is directly related to the controller, as it contains the logic and conditions that are performed when the function is called within the controller.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+<img width="782" alt="ArtHouse Diagram" src="https://github.com/YumnaAlansari/ArtHouse/assets/120118771/8b925e28-6d75-4d2d-bb38-f62c78a25c62">
+
