@@ -22,3 +22,12 @@
  
   </ol>
 </details>
+
+
+<!-- ABOUT THE PROJECT -->
+## About The Project
+
+
+Welcome to the ArtHouse application's Data and controller Layer, where I model complex relationships between ArtHouse, Cinema, Music, and Theatre. Also I manage requests on the server. ArtHouse is an application for managing reservations designed to help manage and acquire data based in specific requirements. In this application, you'll explore how to model complex relationships in a data-driven environment, handle various requests actions, and interact with a MySQL database.
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
