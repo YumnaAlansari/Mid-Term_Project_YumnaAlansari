@@ -14,7 +14,6 @@
           <li><a href="#Features">Features</a></li>
           <li><a href="#Code-Structure">Code Structure</a></li>
           <li><a href="#How-the-Application-Works">How the Application Works</a></li>
-          <li><a href="#Menu-Options">Menu Options</a></li>
           <li><a href="#UML">UML</a></li>
          </ul>
     </li>
