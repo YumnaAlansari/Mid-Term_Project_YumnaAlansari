@@ -1,4 +1,4 @@
-# ArtHouse application's System 
+# Art House application's System 
 <a name="readme-top"></a>
 
 <!-- TABLE OF CONTENTS -->
@@ -84,61 +84,6 @@ The Theater class represents a child class. It includes:
 - numberOfActors:  Theater's number of actors
 - category:  Theater's category
 
-## Controller 
-There are two basic packages under the controller, the first for implementation and the second for interfaces:
-
-### Cinema Controller
-I have five get requests under the cinema category:
-- The first displays all the data in the database
-- The second displays the data in the database based on the ID number
-- The third displays the data in the database based on the name of the director
-- The fourth displays the data in the database based on the year of release
-- The fifth displays the data in the database based on the category
-
-I also have:
-- Post Request to add
-- Put Request for modification based on the ID number
-- Delete Request for deletion based on the ID number
-
-### Cinema Interfaces
-Displays the signature of all the methods used in the controller.
-
-### Music Controller
-I have five get requests under the cinema category:
-- The first displays all the data in the database
-- The second displays the data in the database based on the ID number
-- The third displays the data in the database based on the genre
-- The fourth displays the data in the database based on the artist 
-- The fifth displays the data in the database based on the year of release
-
-I also have:
-- Post Request to add
-- Put Request for modification based on the ID number
-- Delete Request for deletion based on the ID number
-
-### Music Interfaces
-Displays the signature of all the methods used in the controller.
-
-### Theatre Controller
-I have five get requests under the cinema category:
-- The first displays all the data in the database
-- The second displays the data in the database based on the ID number
-- The third displays the data in the database based on the play wright
-- The fourth displays the data in the database based on the number of actors 
-- The fifth displays the data in the database based on the category
-
-I also have:
-- Post Request to add
-- Patch Request for modification the category based on the ID number
-- Delete Request for deletion based on the ID number
-
-### Theatre Interfaces
-Displays the signature of all the methods used in the controller.
-
-### Theatre DTO 
-To deal with patch category request
-
-
 ## Repository
 
 ### Cinema Repository
@@ -159,5 +104,98 @@ Have three methods:
 - findTheatreByNumberOfActors 
 - findTheatreByCategory
 
-## 
+
+## Controller 
+There are two basic packages under the controller, the first for implementation and the second for interfaces:
+
+### Interfaces 
+THere are three interfaces (Cinema, Music and Theatre) displays the signature of all the methods used in the controller.
+
+### Cinema Controller
+I have five get requests under the cinema category:
+- The first displays all the data in the database
+- The second displays the data in the database based on the ID number
+- The third displays the data in the database based on the name of the director
+- The fourth displays the data in the database based on the year of release
+- The fifth displays the data in the database based on the category
+
+I also have:
+- Post Request to add
+- Put Request for modification based on the ID number
+- Delete Request for deletion based on the ID number
+
+
+### Music Controller
+I have five get requests under the cinema category:
+- The first displays all the data in the database
+- The second displays the data in the database based on the ID number
+- The third displays the data in the database based on the genre
+- The fourth displays the data in the database based on the artist 
+- The fifth displays the data in the database based on the year of release
+
+I also have:
+- Post Request to add
+- Put Request for modification based on the ID number
+- Delete Request for deletion based on the ID number
+
+
+### Theatre Controller
+I have five get requests under the cinema category:
+- The first displays all the data in the database
+- The second displays the data in the database based on the ID number
+- The third displays the data in the database based on the play wright
+- The fourth displays the data in the database based on the number of actors 
+- The fifth displays the data in the database based on the category
+
+I also have:
+- Post Request to add
+- Patch Request for modification the category based on the ID number
+- Delete Request for deletion based on the ID number
+
+### Theatre DTO 
+To deal with patch category request
+
+## Service
+There are two basic packages under the Service, the first for implementation and the second for interfaces:
+
+### CinemaService
+Have 8 eight methods:
+- getAllCinema
+- getCinemaById
+- getCinemaByDirector
+- getCinemaByReleaseYear
+- getCinemaByCategory
+- addCinema
+- updateMusicById
+
+
+### MusicService
+Have 8 eight methods:
+- getAllMusic
+- getMusicById
+- getMusicByGenre
+- getMusicByArtist
+- getMusicByReleaseYear
+- updateMusicById
+- addMusic
+- deleteById
+
+### TheatreService
+Have 8 eight methods:
+- getAllTheatre
+- getTheatreById
+- getTheatreByPlayWright
+- getTheatreByNumberOfActors
+- getTheatreByCategory
+- changeTheatreCategory
+- addTheatre
+- deleteTheatreById
+
+
+## Interfaces 
+THere are three interfaces (Cinema, Music and Theatre) displays the signature of all the methods used in the services.
+
+
+
+
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
