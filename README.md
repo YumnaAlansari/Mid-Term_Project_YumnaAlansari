@@ -84,4 +84,18 @@ The Theater class represents a child class. It includes:
 - numberOfActors:  Theater's number of actors
 - category:  Theater's category
 
+## Controller 
+I have two basic packages under the controller, the first for implementation and the second for interfaces:
+
+## Cinema Controller
+I have five get requests under the cinema category:
+The first displays all the data in the database
+The second displays the data in the database based on the ID number
+The third displays the data in the database based on the name of the director
+The fourth displays the data in the database based on the year of launch
+The fifth displays the data in the database based on the category
+
+## Cinema Interfaces
+Displays the signature of all the methods used in the controller.
+
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
