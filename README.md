@@ -49,12 +49,12 @@ To set up the project and get it running on your local machine, please follow th
 
 ### Installation
 1. Download and install DBeaver:
--- Visit the DBeaver website (https://dbeaver.io/) and download the appropriate version for your operating system.
--- Follow the installation instructions provided by DBeaver.
+- Visit the DBeaver website (https://dbeaver.io/) and download the appropriate version for your operating system.
+- Follow the installation instructions provided by DBeaver.
    
 2. Download and install IntelliJ IDEA Community Edition:
--- Visit the JetBrains website (https://www.jetbrains.com/idea/download/) and download IntelliJ IDEA Community Edition for your operating system.
--- Follow the installation instructions provided by IntelliJ IDEA CE.
+- Visit the JetBrains website (https://www.jetbrains.com/idea/download/) and download IntelliJ IDEA Community Edition for your operating system.
+- Follow the installation instructions provided by IntelliJ IDEA CE.
    
 3. Download and install Postman:
 -- Visit the Postman website (https://www.postman.com/downloads/) and download the version compatible with your operating system.
