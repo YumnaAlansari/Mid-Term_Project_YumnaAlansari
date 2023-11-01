@@ -7,6 +7,8 @@
   <ol>
     <li>
       <a href="#about-the-project">About The Project</a>
+      <a href="#about-the-project">Class Diagram</a>
+      <a href="#about-the-project">Setup</a>
     </li>
     <li>
       <a href="#getting-started">Getting Started</a>
@@ -14,7 +16,6 @@
           <li><a href="#Features">Features</a></li>
           <li><a href="#Code-Structure">Code Structure</a></li>
           <li><a href="#How-the-Application-Works">How the Application Works</a></li>
-          <li><a href="#UML">UML</a></li>
          </ul>
     </li>
  <li><a href="#usage">SQL script</a></li>
@@ -31,7 +32,19 @@ Welcome to the ArtHouse application's Data and controller Layer, where I model c
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
+## Class Diagram
 
+<img width="782" alt="ArtHouse Diagram" src="https://github.com/YumnaAlansari/ArtHouse/assets/120118771/8b925e28-6d75-4d2d-bb38-f62c78a25c62">
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+## Setup
+To set up the project and get it running on your local machine, please follow these steps:
+### Prerequisites
+-Java Development Kit (JDK) 8 or higher
+-DBeaver (database management tool)
+-IntelliJ IDEA Community Edition (code editor)
+-Postman (API testing tool)
 
 <!-- GETTING STARTED -->
 ## Getting Started
@@ -207,12 +220,6 @@ After linking the program to the database and the server, the user can interact 
 - The Repository: Which contains the basic functions that search for data in the database.
 - The Controlller: Which manages matters between databases and the server, as it contains requests, endpoints, and calls to the functions that implement them.
 - The Service: It is directly related to the controller, as it contains the logic and conditions that are performed when the function is called within the controller.
-
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
-
-## UML
-
-<img width="782" alt="ArtHouse Diagram" src="https://github.com/YumnaAlansari/ArtHouse/assets/120118771/8b925e28-6d75-4d2d-bb38-f62c78a25c62">
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
