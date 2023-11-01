@@ -7,19 +7,19 @@
   <ol>
     <li><a href="#about-the-project">About The Project</a></li>
     <li><a href="#about-the-project">Class Diagram</a></li>
-    <li><a href="#about-the-project">Setup</a></li>
-      <li><a href="#about-the-project">Technologies Used</a></li>
     <li>
       <a href="#getting-started">Getting Started</a>
       <ul>
+          <li><a href="#about-the-project">Setup</a></li>
+          <li><a href="#about-the-project">Technologies Used</a></li>
+          <li><a href="#Features">How the Application Works</a></li>
           <li><a href="#Features">Features</a></li>
           <li><a href="#Code-Structure">Code Structure</a></li>
           <li><a href="#Code-Structure">Future Work</a></li>
-          <li><a href="#How-the-Application-Works">How the Application Works</a </li>
-         </ul>
+      </ul> 
     </li>
- <li><a href="#usage">SQL script</a></li>
- 
+ <li><a href="#Code-Structure">Extra links</a></li>
+ <li><a href="#usage">Resources</a></li>>
   </ol>
 </details>
 
@@ -101,7 +101,20 @@ These technologies are chosen for their reliability, popularity, and capabilitie
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 <!-- GETTING STARTED -->
+
 ## Getting Started
+
+## How the Application Works
+After linking the program to the database and the server, the user can interact with the server to create specific requests such as get, put, patch, post or delete based on specific criteria, where the required data is fetched from the database directly.
+
+
+### The code is organized into four main classes:
+- The ArtHouse, Cinema, Music, and Theatre classes represent the core entities in the ArtHouse application's system. They contain attributes and methods to manage the system.
+- The Repository: Which contains the basic functions that search for data in the database.
+- The Controlller: Which manages matters between databases and the server, as it contains requests, endpoints, and calls to the functions that implement them.
+- The Service: It is directly related to the controller, as it contains the logic and conditions that are performed when the function is called within the controller.
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 ## Features
 
@@ -260,24 +273,27 @@ Have 8 eight methods:
 
 ## Interfaces 
 THere are three interfaces (Cinema, Music and Theatre) displays the signature of all the methods used in the services.
-
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 
-
-# How the Application Works
-After linking the program to the database and the server, the user can interact with the server to create specific requests such as get, put, patch, post or delete based on specific criteria, where the required data is fetched from the database directly.
-
-
-### The code is organized into four main classes:
-- The ArtHouse, Cinema, Music, and Theatre classes represent the core entities in the ArtHouse application's system. They contain attributes and methods to manage the system.
-- The Repository: Which contains the basic functions that search for data in the database.
-- The Controlller: Which manages matters between databases and the server, as it contains requests, endpoints, and calls to the functions that implement them.
-- The Service: It is directly related to the controller, as it contains the logic and conditions that are performed when the function is called within the controller.
-
+## Future Work
+In the future, I plan to enhance the application with the following features:
+- User Authentication: Implement a user authentication system to allow users to create accounts, log in, and manage their reservations.
+- Seat Selection: Enable users to select specific seats during the reservation process, providing them with more control and flexibility.
+- Event Reminders: Implement a notification system to send reminders to users about their upcoming reserved events.
+- Event Ratings and Reviews: Allow users to rate and write reviews for events they have attended, providing valuable feedback to other users.
+- Advanced Filtering: Enhance the event browsing experience by adding advanced filtering options such as location, category, and price range.
+- Social Sharing: Integrate social media sharing functionality to allow users to share their reserved events with their friends and followers.
+By incorporating these features, the application will provide an even more seamless and personalized experience for users, making it a valuable tool for discovering and reserving event seats.
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-## SQL script
+## Extra links
+
+[ArtHouse application's.pdf](https://github.com/YumnaAlansari/Mid-Term_Project_YumnaAlansari/files/13224833/ArtHouse.application.s.pdf)
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+## Resources
+SQL script
 USE ArtHouse;
 
 
