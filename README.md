@@ -92,10 +92,10 @@ To set up the project and get it running on your local machine, please follow th
 
 ## Technologies Used   
 The technologies used in this project include:
--- Java: The project is built using the Java programming language, which is a popular choice for developing various types of applications.
--- DBeaver: DBeaver is a database management tool used for connecting to and managing databases. It is used in this project to interact with the database.
--- IntelliJ IDEA Community Edition: IntelliJ IDEA is an integrated development environment (IDE) used for Java development. The Community Edition is a free version that provides essential features for Java programming.
--- Postman: Postman is an API testing tool that allows developers to make HTTP requests, test APIs, and analyze responses. It is used in this project for testing and interacting with the project's APIs.
+- Java: The project is built using the Java programming language, which is a popular choice for developing various types of applications.
+- DBeaver: DBeaver is a database management tool used for connecting to and managing databases. It is used in this project to interact with the database.
+- IntelliJ IDEA Community Edition: IntelliJ IDEA is an integrated development environment (IDE) used for Java development. The Community Edition is a free version that provides essential features for Java programming.
+- Postman: Postman is an API testing tool that allows developers to make HTTP requests, test APIs, and analyze responses. It is used in this project for testing and interacting with the project's APIs.
 These technologies are chosen for their reliability, popularity, and capabilities in developing and managing a Java-based project.
 
 
