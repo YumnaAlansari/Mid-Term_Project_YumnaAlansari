@@ -289,7 +289,9 @@ By incorporating these features, the application will provide an even more seaml
 
 ## Extra links
 
-[ArtHouse application's.pdf](https://github.com/YumnaAlansari/Mid-Term_Project_YumnaAlansari/files/13224833/ArtHouse.application.s.pdf)
+[ArtHouse Presentation.pdf](https://github.com/YumnaAlansari/Mid-Term_Project_YumnaAlansari/files/13224926/ArtHouse.Presentation.pdf)
+
+
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 ## Resources
