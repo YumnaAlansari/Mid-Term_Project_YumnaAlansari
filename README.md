@@ -5,17 +5,15 @@
 <details>
   <summary>Table of Contents</summary>
   <ol>
-    <li>
-      <a href="#about-the-project">About The Project</a>
-      <a href="#about-the-project">Class Diagram</a>
-      <a href="#about-the-project">Setup</a>
-    </li>
+    <li><a href="#about-the-project">About The Project</a></li>
+    <li><a href="#about-the-project">Class Diagram</a></li>
+    <li><a href="#about-the-project">Setup</a></li>
     <li>
       <a href="#getting-started">Getting Started</a>
       <ul>
           <li><a href="#Features">Features</a></li>
           <li><a href="#Code-Structure">Code Structure</a></li>
-          <li><a href="#How-the-Application-Works">How the Application Works</a></li>
+          <li><a href="#How-the-Application-Works">How the Application Works</a </li>
          </ul>
     </li>
  <li><a href="#usage">SQL script</a></li>
@@ -41,10 +39,10 @@ Welcome to the ArtHouse application's Data and controller Layer, where I model c
 ## Setup
 To set up the project and get it running on your local machine, please follow these steps:
 ### Prerequisites
--Java Development Kit (JDK) 8 or higher
--DBeaver (database management tool)
--IntelliJ IDEA Community Edition (code editor)
--Postman (API testing tool)
+- Java Development Kit (JDK) 8 or higher
+- DBeaver (database management tool)
+- IntelliJ IDEA Community Edition (code editor)
+- Postman (API testing tool)
 
 <!-- GETTING STARTED -->
 ## Getting Started
