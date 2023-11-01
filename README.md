@@ -8,11 +8,13 @@
     <li><a href="#about-the-project">About The Project</a></li>
     <li><a href="#about-the-project">Class Diagram</a></li>
     <li><a href="#about-the-project">Setup</a></li>
+      <li><a href="#about-the-project">Technologies Used</a></li>
     <li>
       <a href="#getting-started">Getting Started</a>
       <ul>
           <li><a href="#Features">Features</a></li>
           <li><a href="#Code-Structure">Code Structure</a></li>
+          <li><a href="#Code-Structure">Future Work</a></li>
           <li><a href="#How-the-Application-Works">How the Application Works</a </li>
          </ul>
     </li>
@@ -38,6 +40,7 @@ Welcome to the ArtHouse application's Data and controller Layer, where I model c
 
 ## Setup
 To set up the project and get it running on your local machine, please follow these steps:
+
 ### Prerequisites
 - Java Development Kit (JDK) 8 or higher
 - DBeaver (database management tool)
@@ -48,21 +51,26 @@ To set up the project and get it running on your local machine, please follow th
 1. Download and install DBeaver:
 -- Visit the DBeaver website (https://dbeaver.io/) and download the appropriate version for your operating system.
 -- Follow the installation instructions provided by DBeaver.
+   
 2. Download and install IntelliJ IDEA Community Edition:
 -- Visit the JetBrains website (https://www.jetbrains.com/idea/download/) and download IntelliJ IDEA Community Edition for your operating system.
 -- Follow the installation instructions provided by IntelliJ IDEA CE.
+   
 3. Download and install Postman:
 -- Visit the Postman website (https://www.postman.com/downloads/) and download the version compatible with your operating system.
 -- Follow the installation instructions provided by Postman.
+   
 ### Database Setup
 1. Launch DBeaver and connect to your database server:
 -- Open DBeaver and enter the necessary database credentials (host, port, username, password) to establish a connection.
 -- Once connected, create a new database for your project if needed.
+   
 2. Import the database script:
 -- Locate the database script provided in the project's repository or documentation.
 -- Open DBeaver and select your database connection.
 -- Right-click on the database and choose "Execute SQL Script."
 -- Browse and select the database script file to import it into your database.
+   
 ### Project Setup
 1. Clone the project repository: git clone https://github.com/YumnaAlansari/Mid-Term_Project_YumnaAlansari
 
@@ -70,15 +78,28 @@ To set up the project and get it running on your local machine, please follow th
 -- Open IntelliJ IDEA and select "Open" from the welcome screen.
 -- Navigate to the location where you cloned the project repository and select the project directory.
 -- Choose the appropriate build tool (e.g., Gradle, Maven) if prompted.
-Configure the project dependencies:
-Ensure that the necessary dependencies are defined in the project's build file (e.g., build.gradle, pom.xml).
-If using Gradle, click the refresh button in the Gradle tool window to fetch the dependencies.
-Set up the database connection in IntelliJ IDEA:
-Open the Database tool window in IntelliJ IDEA by navigating to View -> Tool Windows -> Database.
-Click on the "+" icon to add a new database connection.
-Select the appropriate database type (e.g., MySQL, PostgreSQL) and provide the necessary connection details (host, port, username, password).
-Test the connection to ensure it is successful.
+   
+3. Configure the project dependencies:
+-- Ensure that the necessary dependencies are defined in the project's build file (e.g., build.gradle, pom.xml).
+-- If using Gradle, click the refresh button in the Gradle tool window to fetch the dependencies.
+4. Set up the database connection in IntelliJ IDEA:
+-- Open the Database tool window in IntelliJ IDEA by navigating to View -> Tool Windows -> Database.
+-- Click on the "+" icon to add a new database connection.
+-- Select the appropriate database type (e.g., MySQL, PostgreSQL) and provide the necessary connection details (host, port, username, password).
+-- Test the connection to ensure it is successful.
+   
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
 
+## Technologies Used   
+The technologies used in this project include:
+-- Java: The project is built using the Java programming language, which is a popular choice for developing various types of applications.
+-- DBeaver: DBeaver is a database management tool used for connecting to and managing databases. It is used in this project to interact with the database.
+-- IntelliJ IDEA Community Edition: IntelliJ IDEA is an integrated development environment (IDE) used for Java development. The Community Edition is a free version that provides essential features for Java programming.
+-- Postman: Postman is an API testing tool that allows developers to make HTTP requests, test APIs, and analyze responses. It is used in this project for testing and interacting with the project's APIs.
+These technologies are chosen for their reliability, popularity, and capabilities in developing and managing a Java-based project.
+
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
 <!-- GETTING STARTED -->
 ## Getting Started
 
