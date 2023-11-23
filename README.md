@@ -10,6 +10,7 @@
     <li>
       <a href="#getting-started">Getting Started</a>
       <ul>
+          <li><a href="#about-the-project">Front Repository</a></li>
           <li><a href="#about-the-project">Setup</a></li>
           <li><a href="#about-the-project">Technologies Used</a></li>
           <li><a href="#Features">How the Application Works</a></li>
@@ -37,6 +38,9 @@ Welcome to the ArtHouse application's Data and controller Layer, where I model c
 <img width="782" alt="ArtHouse Diagram" src="https://github.com/YumnaAlansari/ArtHouse/assets/120118771/8b925e28-6d75-4d2d-bb38-f62c78a25c62">
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+## Front Repository
+The link for front repo https://github.com/YumnaAlansari/Final-Project
 
 ## Setup
 To set up the project and get it running on your local machine, please follow these steps:
